@@ -2,12 +2,14 @@ package bdm.test.service;
 
 import bdm.test.entity.Message;
 import bdm.test.repository.MessageRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Slf4j
 public class MessageService {
 
     private final MessageRepository messageRepository;
@@ -17,11 +19,15 @@ public class MessageService {
         this.messageRepository = messageRepository;
     }
 
-    public Message sent(Message message) {
-        return messageRepository.save(message);
+    public Message send(Message message) {
+        Message savedMessage = messageRepository.save(message);
+        log.info("Method 'send' has been invoked. Result: {}", savedMessage);
+        return savedMessage;
     }
 
     public List<Message> history10() {
-        return messageRepository.findLastTen();
+        List<Message> messages = messageRepository.findLastTen();
+        log.info("Method 'history10' has been invoked. Result: {}", messages);
+        return messages;
     }
 }

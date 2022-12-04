@@ -28,13 +28,13 @@ public class MessageRestController {
     }
 
     @PostMapping("messages")
-    public ResponseEntity sent(@RequestBody MessageDTO requestDTO) {
+    public ResponseEntity send(@RequestBody MessageDTO requestDTO) {
         Object result;
 
         if (messageIdentifier.identify(requestDTO)) {
             result = messageMapper.mapToListMessageDTO(messageService.history10());
         } else {
-            result = messageService.sent(messageMapper.mapToMessage(requestDTO));
+            result = messageService.send(messageMapper.mapToMessage(requestDTO));
         }
 
         return new ResponseEntity(result, HttpStatus.OK);
