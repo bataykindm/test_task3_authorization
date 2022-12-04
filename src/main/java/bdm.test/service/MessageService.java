@@ -21,7 +21,7 @@ public class MessageService {
         return messageRepository.save(message);
     }
 
-    public List<Message> history10(){
+    public List<Message> history10() {
         return messageRepository.findLastTen();
     }
 }

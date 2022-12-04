@@ -1,7 +1,6 @@
 package bdm.test.validator;
 
 import bdm.test.controller.dto.MessageDTO;
-import bdm.test.entity.Message;
 import bdm.test.mapper.MessageMapper;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +13,7 @@ public class MessageIdentifier {
         this.messageMapper = messageMapper;
     }
 
-    public boolean identify(MessageDTO messageDTO){
+    public boolean identify(MessageDTO messageDTO) {
         return messageDTO.getText().equals("history 10");
     }
 }

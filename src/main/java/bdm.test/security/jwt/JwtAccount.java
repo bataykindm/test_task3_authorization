@@ -22,7 +22,7 @@ public class JwtAccount implements UserDetails {
         this.password = password;
     }
 
-    public JwtAccount (Account account){
+    public JwtAccount(Account account) {
         this.id = account.getId();
         this.username = account.getUsername();
         this.password = account.getPassword();
