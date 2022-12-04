@@ -37,7 +37,6 @@ public class AuthenticationRestController {
             String username = requestDTO.getUsername();
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, requestDTO.getPassword()));
             Account account = accountService.getAccountByUsername(username);
-
             String token = jwtTokenProvider.createToken(username, account.getId());
             Map<Object, Object> response = new HashMap<>();
             response.put("username", username);
