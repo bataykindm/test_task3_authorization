@@ -4,6 +4,9 @@ import bdm.test.controller.dto.MessageDTO;
 import bdm.test.entity.Message;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class MessageMapper {
 
@@ -21,5 +24,9 @@ public class MessageMapper {
         messageDTO.setText(message.getText());
 
         return messageDTO;
+    }
+
+    public List<MessageDTO> mapToListMessageDTO(List<Message> messages){
+        return messages.stream().map(this::mapToMessageDTO).collect(Collectors.toList());
     }
 }

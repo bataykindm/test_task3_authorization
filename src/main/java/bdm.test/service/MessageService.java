@@ -5,6 +5,8 @@ import bdm.test.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MessageService {
 
@@ -15,7 +17,11 @@ public class MessageService {
         this.messageRepository = messageRepository;
     }
 
-    public Message sent (Message message){
+    public Message sent(Message message) {
         return messageRepository.save(message);
+    }
+
+    public List<Message> history10(){
+        return messageRepository.findLastTen();
     }
 }
