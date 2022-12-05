@@ -1,5 +1,5 @@
 <h1>
-  <p align="center">Authorication app</p>
+  <p align="center">Authorization app</p>
 </h1>
 
 <b><p align="center">Описание</p></b>
