@@ -1,6 +1,7 @@
 package bdm.test.controller;
 
 import bdm.test.controller.dto.MessageDTO;
+import bdm.test.entity.Message;
 import bdm.test.mapper.MessageMapper;
 import bdm.test.service.MessageService;
 import bdm.test.validator.MessageIdentifier;
@@ -34,7 +35,8 @@ public class MessageRestController {
         if (messageIdentifier.identify(requestDTO)) {
             result = messageMapper.mapToListMessageDTO(messageService.history10());
         } else {
-            result = messageService.send(messageMapper.mapToMessage(requestDTO));
+            Message message = messageMapper.mapToMessage(requestDTO);
+            result = messageMapper.mapToMessageDTO(messageService.send(message));
         }
 
         return new ResponseEntity(result, HttpStatus.OK);
