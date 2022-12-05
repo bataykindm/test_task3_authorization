@@ -100,7 +100,7 @@ server.port=8175
         	<tr>
 			<td></td>
 			<td></td>
-          		<td>При передаче в поле “text” значение “history 10” метод возвращает последние 10 сообщений из БД</td>
+          		<td>При передачи в поле “text” значение “history 10” метод возвращает последние 10 сообщений из БД</td>
           		<td>curl -X POST "http://localhost:8175/messages" -H "Accept:application/json" -H "Content-Type:application/json" -H "Authorization:Bearer_token " -d "{\"username\":\"-----\",\"text\":\"history 10\"}"</td>
         	</tr>
 	</tbody>
