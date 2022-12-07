@@ -64,7 +64,7 @@ server.port=8175
 
 <em>docker build -t inside</em> – создание docker image
 
-<em>docker run -p 8175:8175 --name inside -d inside</em> – запуск в работу контейнера приложения с назначенным при старте именем “inside_container” на порту 8175
+<em>docker run -p 8175:8175 --name inside_container -d inside</em> – запуск в работу контейнера приложения с назначенным при старте именем “inside_container” на порту 8175
 
 <em>docker –kill inside_container</em> – для остановки работы приложения
 
